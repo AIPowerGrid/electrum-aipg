@@ -42,8 +42,8 @@ def read_json(filename, default):
     return r
 
 
-GIT_REPO_URL = "https://github.com/Electrum-RVN-SIG/electrum-ravencoin"
-GIT_REPO_ISSUES_URL = "https://github.com/Electrum-RVN-SIG/electrum-ravencoin/issues"
+GIT_REPO_URL = "https://github.com/AIPowerGrid/electrum-aipg"
+GIT_REPO_ISSUES_URL = "https://github.com/AIPowerGrid/electrum-aipg/issues"
 BIP39_WALLET_FORMATS = read_json('bip39_wallet_formats.json', [])
 
 
@@ -106,17 +106,17 @@ class AbstractNet:
         return bytes.fromhex(bitcoin.rev_hex(cls.GENESIS))
 
 
-class RavencoinMainnet(AbstractNet):
+class AIPGMainnet(AbstractNet):
     NET_NAME = "mainnet"
     TESTNET = False
     WIF_PREFIX = 128
-    ADDRTYPE_P2PKH = 60
-    ADDRTYPE_P2SH = 122
-    ADDRTYPE_P2SH_ALT = 122
+    ADDRTYPE_P2PKH = 23
+    ADDRTYPE_P2SH = 23
+    ADDRTYPE_P2SH_ALT = 23
     MATURE = 60
     SEGWIT_HRP = "rc"
     BOLT11_HRP = SEGWIT_HRP
-    GENESIS = "0000006b444bc2f2ffe627be9d9e7e7a0730000870ef6eb6da46c8eae389df90"
+    GENESIS = "000000fe8c99a7aacc5aff074278a8378e625c0d02e4894db8f09bab185f4eb6"
     DEFAULT_PORTS = {'t': '50001', 's': '50002'}
     DEFAULT_SERVERS = read_json('servers.json', {})
     CHECKPOINTS = read_json('checkpoints.json', [])
@@ -124,15 +124,15 @@ class RavencoinMainnet(AbstractNet):
     DGW_CHECKPOINTS_SPACING = 2016
     DGW_CHECKPOINTS_START = 168 * DGW_CHECKPOINTS_SPACING  #338_688, DGW starts at 338_778
 
-    X16Rv2ActivationTS = 1569945600
-    KawpowActivationTS = 1588788000
-    KawpowActivationHeight = 1219736
-    nDGWActivationBlock = 338778
+    X16Rv2ActivationTS = 1688764800
+    KawpowActivationTS = 1688764800
+    KawpowActivationHeight = 1
+    nDGWActivationBlock = 1
 
-    DEFAULT_MESSAGE_CHANNELS = ['ELECTRUM_RAVENCOIN~notification']
-    ASSET_PREFIX = b'rvn'
-    SHORT_NAME = 'RVN'
-    LONG_NAME = 'Ravencoin'
+    DEFAULT_MESSAGE_CHANNELS = ['ELECTRUM_AIPG~notification']
+    ASSET_PREFIX = b'aipg'
+    SHORT_NAME = 'AIPG'
+    LONG_NAME = 'AIPG'
 
     MULTISIG_ASSETS = False
 
@@ -152,35 +152,35 @@ class RavencoinMainnet(AbstractNet):
         'p2wsh': 0x02aa7ed3,  # Zpub
     }
     XPUB_HEADERS_INV = inv_dict(XPUB_HEADERS)
-    BIP44_COIN_TYPE = 175
+    BIP44_COIN_TYPE = 2686
 
     BURN_AMOUNTS = BurnAmounts(
-        IssueAssetBurnAmount=500,
-        ReissueAssetBurnAmount=100,
-        IssueSubAssetBurnAmount=100,
-        IssueUniqueAssetBurnAmount=5,
-        IssueMsgChannelAssetBurnAmount=100,
-        IssueQualifierAssetBurnAmount=1000,
-        IssueSubQualifierAssetBurnAmount=100,
-        IssueRestrictedAssetBurnAmount=1500,
-        AddNullQualifierTagBurnAmount=0.1
+        IssueAssetBurnAmount=50,
+        ReissueAssetBurnAmount=10,
+        IssueSubAssetBurnAmount=10,
+        IssueUniqueAssetBurnAmount=0.5,
+        IssueMsgChannelAssetBurnAmount=10,
+        IssueQualifierAssetBurnAmount=100,
+        IssueSubQualifierAssetBurnAmount=10,
+        IssueRestrictedAssetBurnAmount=150,
+        AddNullQualifierTagBurnAmount=0.01
     )
 
     BURN_ADDRESSES = BurnAddresses(
-        IssueAssetBurnAddress='RXissueAssetXXXXXXXXXXXXXXXXXhhZGt',
-        ReissueAssetBurnAddress='RXReissueAssetXXXXXXXXXXXXXXVEFAWu',
-        IssueSubAssetBurnAddress='RXissueSubAssetXXXXXXXXXXXXXWcwhwL',
-        IssueUniqueAssetBurnAddress='RXissueUniqueAssetXXXXXXXXXXWEAe58',
-        IssueMsgChannelAssetBurnAddress='RXissueMsgChanneLAssetXXXXXXSjHvAY',
-        IssueQualifierAssetBurnAddress='RXissueQuaLifierXXXXXXXXXXXXUgEDbC',
-        IssueSubQualifierAssetBurnAddress='RXissueSubQuaLifierXXXXXXXXXVTzvv5',
-        IssueRestrictedAssetBurnAddress='RXissueRestrictedXXXXXXXXXXXXzJZ1q',
-        AddNullQualifierTagBurnAddress='RXaddTagBurnXXXXXXXXXXXXXXXXZQm5ya',
-        GlobalBurnAddress='RXBurnXXXXXXXXXXXXXXXXXXXXXXWUo9FV'
+        IssueAssetBurnAddress='AIissueAssetXXXXXXXXXXXXXXXXXhhZGt',
+        ReissueAssetBurnAddress='AIReissueAssetXXXXXXXXXXXXXXVEFAWu',
+        IssueSubAssetBurnAddress='AIissueSubAssetXXXXXXXXXXXXXWcwhwL',
+        IssueUniqueAssetBurnAddress='AIissueUniqueAssetXXXXXXXXXXWEAe58',
+        IssueMsgChannelAssetBurnAddress='AIissueMsgChanneLAssetXXXXXXSjHvAY',
+        IssueQualifierAssetBurnAddress='AIissueQuaLifierXXXXXXXXXXXXUgEDbC',
+        IssueSubQualifierAssetBurnAddress='AIissueSubQuaLifierXXXXXXXXXVTzvv5',
+        IssueRestrictedAssetBurnAddress='AIissueRestrictedXXXXXXXXXXXXzJZ1q',
+        AddNullQualifierTagBurnAddress='AIaddTagBurnXXXXXXXXXXXXXXXXZQm5ya',
+        GlobalBurnAddress='AIBurnXXXXXXXXXXXXXXXXXXXXXXWUo9FV'
     )
 
 
-class RavencoinTestnet(AbstractNet):
+class AIPGTestnet(AbstractNet):
     NET_NAME = "testnet"
     BIP44_COIN_TYPE = 1
     LN_REALM_BYTE = 0
@@ -188,13 +188,13 @@ class RavencoinTestnet(AbstractNet):
     ]
     TESTNET = True
     WIF_PREFIX = 239
-    ADDRTYPE_P2PKH = 111
-    ADDRTYPE_P2SH = 196
-    ADDRTYPE_P2SH_ALT = 196
+    ADDRTYPE_P2PKH = 23
+    ADDRTYPE_P2SH = 23
+    ADDRTYPE_P2SH_ALT = 23
     MATURE = 60
     SEGWIT_HRP = "tc"
     BOLT11_HRP = SEGWIT_HRP
-    GENESIS = "000000ecfc5e6324a079542221d00e10362bdc894d56500c414060eea8a3ad5a"
+    GENESIS = "000000f798386703ae778eeaf8a2f426dc2715eb8989b4226cddc1681b567760"
     DEFAULT_PORTS = {'t': '51001', 's': '51002'}
     DEFAULT_SERVERS = read_json('servers_testnet.json', {})
     CHECKPOINTS = []
@@ -202,15 +202,15 @@ class RavencoinTestnet(AbstractNet):
     DGW_CHECKPOINTS_SPACING = 2016
     DGW_CHECKPOINTS_START = 0
 
-    X16Rv2ActivationTS = 1567533600
-    KawpowActivationTS = 1585159200
-    KawpowActivationHeight = 231544
+    X16Rv2ActivationTS = 1688764800
+    KawpowActivationTS = 1688764800
+    KawpowActivationHeight = 1
     nDGWActivationBlock = 1
 
     DEFAULT_MESSAGE_CHANNELS = []
-    ASSET_PREFIX = b'rvn'
-    SHORT_NAME = 'tRVN'
-    LONG_NAME = 'Ravencoin'
+    ASSET_PREFIX = b'aipg'
+    SHORT_NAME = 'tAIPG'
+    LONG_NAME = 'AIPG'
     MULTISIG_ASSETS = False
     
     XPRV_HEADERS = {
@@ -231,15 +231,15 @@ class RavencoinTestnet(AbstractNet):
     XPUB_HEADERS_INV = inv_dict(XPUB_HEADERS)
 
     BURN_AMOUNTS = BurnAmounts(
-        IssueAssetBurnAmount=500,
-        ReissueAssetBurnAmount=100,
-        IssueSubAssetBurnAmount=100,
-        IssueUniqueAssetBurnAmount=5,
-        IssueMsgChannelAssetBurnAmount=100,
-        IssueQualifierAssetBurnAmount=1000,
-        IssueSubQualifierAssetBurnAmount=100,
-        IssueRestrictedAssetBurnAmount=1500,
-        AddNullQualifierTagBurnAmount=0.1
+        IssueAssetBurnAmount=50,
+        ReissueAssetBurnAmount=10,
+        IssueSubAssetBurnAmount=10,
+        IssueUniqueAssetBurnAmount=0.5,
+        IssueMsgChannelAssetBurnAmount=10,
+        IssueQualifierAssetBurnAmount=100,
+        IssueSubQualifierAssetBurnAmount=10,
+        IssueRestrictedAssetBurnAmount=150,
+        AddNullQualifierTagBurnAmount=0.01
     )
 
     BURN_ADDRESSES = BurnAddresses(
@@ -252,7 +252,7 @@ class RavencoinTestnet(AbstractNet):
         IssueSubQualifierAssetBurnAddress='n1issueSubQuaLifierXXXXXXXXXYffPLh',
         IssueRestrictedAssetBurnAddress='n1issueRestrictedXXXXXXXXXXXXZVT9V',
         AddNullQualifierTagBurnAddress='n1addTagBurnXXXXXXXXXXXXXXXXX5oLMH',
-        GlobalBurnAddress='n1BurnXXXXXXXXXXXXXXXXXXXXXXU1qejP'
+        GlobalBurnAddress='AcYHNBj8C6nCFSpu1ANsJxturWp31W32cd'
     )
 
 
