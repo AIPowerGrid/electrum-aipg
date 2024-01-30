@@ -266,13 +266,13 @@ def all_subclasses(cls):
 NETS_LIST = tuple(all_subclasses(AbstractNet))
 
 # don't import net directly, import the module instead (so that net is singleton)
-net = RavencoinMainnet
+net = AIPGMainnet
 
 
 def set_mainnet():
     global net
-    net = RavencoinMainnet
+    net = AIPGMainnet
 
 def set_testnet():
     global net
-    net = RavencoinTestnet
+    net = AIPGTestnet
