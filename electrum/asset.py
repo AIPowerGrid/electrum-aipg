@@ -7,7 +7,7 @@ from enum import Enum, auto
 from typing import Optional, Sequence, Mapping, Union, TYPE_CHECKING
 
 from . import constants
-from .bitcoin import address_to_script, construct_script, int_to_hex, opcodes, COIN, base_decode, base_encode, _op_push
+from .bitcoin import address_to_script, construct_script, int_to_hex, opcodes, COIN, base_decode, base_encode, _op_push, TOTAL_COIN_SUPPLY_LIMIT_IN_BTC
 from .boolean_ast_tree import parse_boolean_equation, AbstractBooleanASTNode
 from .i18n import _
 
