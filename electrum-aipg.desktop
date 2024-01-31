@@ -15,7 +15,7 @@ StartupNotify=true
 StartupWMClass=electrum_aipg
 Terminal=false
 Type=Application
-MimeType=x-scheme-handler/raven
+MimeType=x-scheme-handler/aipg
 Actions=Testnet;
 
 [Desktop Action Testnet]
