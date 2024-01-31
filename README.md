@@ -100,7 +100,7 @@ and [for macOS](contrib/osx/README_macos.md))_
 Check out the code from GitHub:
 ```
 $ git clone https://github.com/AIPowerGrid/electrum-aipg.git
-$ cd electrum
+$ cd electrum-aipg
 $ git submodule update --init
 ```
 
