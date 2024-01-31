@@ -1,12 +1,12 @@
-_(If you've come here looking to simply run Electrum Ravencoin, you may download a prebuilt binary for
-[windows](https://github.com/Electrum-RVN-SIG/electrum-ravencoin/releases/download/v1.2.1/electrum-ravencoin-v1.2.1-setup.exe),
-[linux](https://github.com/Electrum-RVN-SIG/electrum-ravencoin/releases/download/v1.2.1/electrum-ravencoin-v1.2.1-x86_64.AppImage), and
-[mac](https://github.com/Electrum-RVN-SIG/electrum-ravencoin/releases/download/v1.2.0/electrum-ravencoin-v1.2.0.dmg)
-[or see other options](https://github.com/Electrum-RVN-SIG/electrum-ravencoin/releases/latest).)_
+_(If you've come here looking to simply run Electrum AIPG, you may download a prebuilt binary for
+[windows](https://github.com/AIPowerGrid/electrum-aipg/releases/download/v1.2.1/electrum-aipg-v1.2.1-setup.exe),
+[linux](https://github.com/AIPowerGrid/electrum-aipg/releases/download/v1.2.1/electrum-aipg-v1.2.1-x86_64.AppImage), and
+[mac](https://github.com/AIPowerGrid/electrum-aipg/releases/download/v1.2.0/electrum-aipg-v1.2.0.dmg)
+[or see other options](https://github.com/AIPowerGrid/electrum-aipg/releases/latest).)_
 
-Migrating from versions earlier than v1.0.0? Read the release notes for [that version](https://github.com/Electrum-RVN-SIG/electrum-ravencoin/releases/tag/v1.0.1).
+Migrating from versions earlier than v1.0.0? Read the release notes for [that version](https://github.com/AIPowerGrid/electrum-aipg/releases/tag/v1.0.1).
 
-# Electrum Ravencoin - Lightweight Ravencoin client
+# Electrum AIPG - Lightweight AIPG client
 
 ```
 Licence: MIT Licence
@@ -21,11 +21,11 @@ Homepage: https://electrum.org/
 
 ## Run your own server!
 
-https://github.com/Electrum-RVN-SIG/electrumx-ravencoin
+https://github.com/AIPowerGrid/electrumx-aipg
 
 ## Need help?
 
-Find @kralverde on [discord](https://discord.com/invite/jn6uhur).
+Find @topper on [discord](https://discord.gg/7g6tNz4a).
 
 ## Getting started
 
