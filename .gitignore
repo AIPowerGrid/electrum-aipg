@@ -23,6 +23,7 @@ bin/
 .vscode
 electrum_data
 .DS_Store
+venv/
 
 # tests/tox
 .tox/
