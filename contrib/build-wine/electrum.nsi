@@ -133,10 +133,10 @@ Section
 
 
   ;Links bitcoin: and lightning: URIs to Electrum
-  WriteRegStr HKCU "Software\Classes\raven" "" "URL:raven Protocol"
-  WriteRegStr HKCU "Software\Classes\raven" "URL Protocol" ""
-  WriteRegStr HKCU "Software\Classes\raven" "DefaultIcon" "$\"$INSTDIR\electrum.ico, 0$\""
-  WriteRegStr HKCU "Software\Classes\raven\shell\open\command" "" "$\"$INSTDIR\electrum-aipg-${PRODUCT_VERSION}.exe$\" $\"%1$\""
+  WriteRegStr HKCU "Software\Classes\aipg" "" "URL:aipg Protocol"
+  WriteRegStr HKCU "Software\Classes\aipg" "URL Protocol" ""
+  WriteRegStr HKCU "Software\Classes\aipg" "DefaultIcon" "$\"$INSTDIR\electrum.ico, 0$\""
+  WriteRegStr HKCU "Software\Classes\aipg\shell\open\command" "" "$\"$INSTDIR\electrum-aipg-${PRODUCT_VERSION}.exe$\" $\"%1$\""
   ;WriteRegStr HKCU "Software\Classes\lightning" "" "URL:lightning Protocol"
   ;WriteRegStr HKCU "Software\Classes\lightning" "URL Protocol" ""
   ;WriteRegStr HKCU "Software\Classes\lightning" "DefaultIcon" "$\"$INSTDIR\electrum.ico, 0$\""
