@@ -114,7 +114,7 @@ class AIPGMainnet(AbstractNet):
     ADDRTYPE_P2SH = 23
     ADDRTYPE_P2SH_ALT = 23
     MATURE = 60
-    SEGWIT_HRP = "rc"
+    SEGWIT_HRP = "ai"
     BOLT11_HRP = SEGWIT_HRP
     GENESIS = "000000fe8c99a7aacc5aff074278a8378e625c0d02e4894db8f09bab185f4eb6"
     DEFAULT_PORTS = {'t': '50001', 's': '50002'}
