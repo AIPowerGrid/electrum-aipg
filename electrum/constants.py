@@ -97,7 +97,7 @@ class AbstractNet:
 
     @classmethod
     def max_checkpoint(cls) -> int:
-        # DGW Checkpoints start at height 400,000 and are every 2016 blocks after
+        # DGW Checkpoints start at height 0 and are every 2016 blocks after
         return max(0, cls.DGW_CHECKPOINTS_START + (len(cls.DGW_CHECKPOINTS) * cls.DGW_CHECKPOINTS_SPACING) - 1)
 
     @classmethod
@@ -119,10 +119,10 @@ class AIPGMainnet(AbstractNet):
     GENESIS = "000000fe8c99a7aacc5aff074278a8378e625c0d02e4894db8f09bab185f4eb6"
     DEFAULT_PORTS = {'t': '50001', 's': '50002'}
     DEFAULT_SERVERS = read_json('servers.json', {})
-    CHECKPOINTS = read_json('checkpoints.json', [])
+    CHECKPOINTS = read_json('checkpoints_dwg.json', [])
     DGW_CHECKPOINTS = read_json('checkpoints_dgw.json', [])
     DGW_CHECKPOINTS_SPACING = 2016
-    DGW_CHECKPOINTS_START = 168 * DGW_CHECKPOINTS_SPACING  #338_688, DGW starts at 338_778
+    DGW_CHECKPOINTS_START = 0 * DGW_CHECKPOINTS_SPACING
 
     X16Rv2ActivationTS = 1688764800
     KawpowActivationTS = 1688764800
