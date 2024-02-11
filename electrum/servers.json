@@ -1,9 +1,15 @@
 {
-    "localhost": {
+    "electrumx1.aipowergrid.io": {
+      "pruning": "-",
+      "s": "50002",
+      "t": "50001",
+      "version": "1.11"
+    },
+    "electrumx2.aipowergrid.io": {
       "pruning": "-",
       "s": "50002",
       "t": "50001",
       "version": "1.11"
     }
-  }
-  
+
+}
